@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parmanand Sports Academy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+<!-- <swiper-container class="mySwiper" navigation="true" pagination="true" css-mode=True etc>   -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="shortcut icon" href="img/psa.png" type="image/x-icon">
+    <meta name="keywords" content="Parmanand Sports Academy, Nashik, sports training,best sports academy in nashik,central location, coaching, sports academy,gymnastics,cricket,basketball,badminton,fencing,football,taekwondo,archery,skating,mallakhamba,dance,chess">
+    <meta name="description" content="Parmanand Sports Academy is a leading sports training institute in Nashik, offering professional coaching in various sports.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="img/psa.png" alt="logo" class="psa" class="logo">
+        
+        <a href="#" class="logo"></a>
+         
+         
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <div class="dropdown">
+                <button class="dropbtn">Sports <i class="fas fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="gymnastic.html">Gymnastics</a>
+                    <a href="basketball.html">Basketball</a>
+                    <a href="badminton.html">Badminton</a>
+                    <a href="cricket.html">Cricket</a>
+                    <a href="football.html">Football</a>
+                    <a href="archery.html">Archery</a>
+                    <a href="skating.html">Skating</a>
+                    <a href="dance.html">Dance</a>
+                    <a href="chess.html">Chess</a>
+                    <a href="fencing.html">Fencing</a>
+                    <a href="mallakhamba.html">Mallakhamba</a>
+                    <a href="taekwondo.html">Taekwondo</a>
+                </div>
+            </div>
+            <a href="acheivement.html">Achievements</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contactus.html">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="registration.html" class="btn">Register Online</a>
+            <div id="menu-btn" class="fas  fa-bars"></div>
+        </div>
+    </header>
+    <section class="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box" style="background: linear-gradient( rgba(0,0,0,.3),rgba(0,0,0,.3)),url('img/sports-background-with-blue-shape_571891-33.jpg'); min-height: 70vh; ">
+                <div class="content">
+                    <h3>Gallery</h3>
+                    
+                    <svg class="arrows">
+                        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                      </svg>
+                </div></div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="con">
+        <h1 class="ghead">Our Photo Gallery</h1> 
+        <!-- <div class="top-content">
+            <h3 class="thead">Photo Gallery</h3> -->
+            <div class="label">
+                <button onclick="filterGallery('all')" class="button-83">All</button>
+                <button onclick="filterGallery('events')" class="button-83">Events</button>
+                <button onclick="filterGallery('gym')" class="button-83">Gymnastics</button>
+                <button onclick="filterGallery('basket')" class="button-83">Basketball</button>
+                <button onclick="filterGallery('badminton')" class="button-83">Badminton</button>
+                <button onclick="filterGallery('cricket')" class="button-83">Cricket</button>
+                <button onclick="filterGallery('skating')" class="button-83">Skating</button>
+                <button onclick="filterGallery('football')" class="button-83">Football</button>
+                <button onclick="filterGallery('archery')" class="button-83">Archery</button>
+                <button onclick="filterGallery('fencing')" class="button-83">Fencing</button>
+                <button onclick="filterGallery('mall')" class="button-83">Mallakhamba</button>
+                <button onclick="filterGallery('dance')" class="button-83">Dance</button>
+                <button onclick="filterGallery('chess')" class="button-83">Chess</button>
+                <button onclick="filterGallery('taekwondo')" class="button-83">Taekwondo</button>
+              
+                
+               
+              </div>
+        <!-- </div> -->
+        <div class="photo-gallery">
+            <div class="pic place" data-category="events">
+                <img src="img/events/e1.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e2.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e3.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e4.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e5.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e6.jpg" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/basketballimg1.jpg" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1168.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1871.JPG" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton1.jpg" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton2.jpg" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton3.jpg" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton4.jpg" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton5.jpg" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/badminton6.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football1.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football2.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football3.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football4.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football5.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football6.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football7.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football">
+                <img src="img/football/football8.jpg" alt="">
+            </div>
+            <div class="pic foot" data-category="football" >
+               
+                <img src="img/football/football9.jpg" alt="">
+            </div>
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e7.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e8.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e9.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e10.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e11.jpg" alt="">
+            </div>
+          
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/basketballimg2.jpg" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1877.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1125.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1126.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1128.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1131.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1133.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1134.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1135.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1136.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1138.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1137.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1139.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1255.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1169.JPG" alt="">
+            </div>
+            <div class="pic basket" data-category="basket">
+                <img src="img/basketball/DSC_1209.JPG" alt="">
+            </div>
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/DSC_1016.JPG" alt="">
+            </div>
+           
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e12.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e13.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e14.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e15.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e16.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g1.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g2.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g3.jpg" alt="">
+            </div>
+          
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1901.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1217.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1218.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1219.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1222.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1224.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1223.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1226.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1228.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1896.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1899.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1234.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1912.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1927.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1241.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1243.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1245.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1248.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/DSC_1920.JPG" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g4.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g5.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g6.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g7.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g8.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g9.jpg" alt="">
+            </div>
+            <div class="pic gym" data-category="gym">
+                <img src="img/gymnastics/g10.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e17.jpg" alt="">
+            </div>
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e18.jpg" alt="">
+            </div>
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e19.jpg" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1257.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1279.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1281.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1296.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1311.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1262.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1327.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1386.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1406.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1829.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1371.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1276.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1362.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1272.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1275.JPG" alt="">
+            </div>
+            <div class="pic cricket" data-category="cricket">
+                <img src="img/cricket/DSC_1278.JPG" alt="">
+            </div>
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e20.jpg" alt="">
+            </div>
+           
+            <div class="pic place" data-category="events">
+                <img src="img/events/e21.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e22.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e23.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e24.jpg" alt="">
+            </div>
+           
+            <div class="pic badmin" data-category="badminton">
+                <img src="img/badminton/DSC_1012.JPG" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery1.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery2.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery3.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery4.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery5.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery6.jpg" alt="">
+            </div>
+            <div class="pic archery" data-category="archery">
+                <img src="img/archery/archery7.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess1.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess2.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess3.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess4.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess5.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess6.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess7.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess8.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess9.jpg" alt="">
+            </div>
+            <div class="pic chess" data-category="chess">
+                <img src="img/chess/chess10.jpg" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/fencing1.jpg" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/fencing2.jpg" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/fencing3.jpg" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/DSC_1179.JPG" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/DSC_1181.JPG" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/DSC_1187.JPG" alt="">
+            </div>
+            <div class="pic fencing" data-category="fencing">
+                <img src="img/fencing/DSC_1189.JPG" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/khamb1 (1).jpg" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/khamb2.jpg" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/khamb3.jpg" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/khamb4.jpg" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/DSC_0947.jpg" alt="">
+            </div>
+            <div class="pic mall" data-category="mall">
+                <img src="img/mallakhamba/DSC_0953.jpg" alt="">
+            </div>
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating1.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating2.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating3.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_0826.JPG" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_0880.JPG" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_0913.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_0923.JPG" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_1816.JPG" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/DSC_1812.JPG" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating4.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating5.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating6.jpg" alt="">
+            </div>
+            
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating7.jpg" alt="">
+            </div>
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating8.jpg" alt="">
+            </div>
+            <div class="pic skating" data-category="skating">
+                <img src="img/skating/skating9.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e25.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e26.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e27.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e28.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e29.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e30.jpg" alt="">
+            </div>
+            <div class="pic place" data-category="events">
+                <img src="img/events/e31.jpg" alt="">
+            </div>
+            <div class="pic dance" data-category="dance">
+                <img src="img/dance/d1 (1).JPG" alt="">
+            </div>
+        
+           
+            <div class="pic dance" data-category="dance">
+                <img src="img/dance/d1 (3).JPG" alt="">
+            </div>
+           
+            <div class="pic dance" data-category="dance">
+                <img src="img/dance/d1 (4).JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1478.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1480.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1488.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1496.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1500.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1526.JPG" alt="">
+            </div>
+            <div class="pic tak" data-category="taekwondo">
+                <img src="img/taikondo/DSC_1543.JPG" alt="">
+            </div>
+           
+           
+         
+            <br><br><br>
+        </div>
+        <br><br><br>
+    </div>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+    
+                <div class="text">
+                    <div class="flogo"></div>
+                   
+                </div>
+                <div class="icon">
+                    <a href="https://www.facebook.com/people/Parmanand-Sports-Academy-Nashik/100086375480373/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/parmanandsports.nashik/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@paramanandsportsacadamy9671" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="box">
+                <h1>Conatct Info</h1>
+                <div class="icons">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Untwadi, Jagtap Nagar, Nashik, Maharashtra 422008</a>
+                    <a href="#"><i class="fas fa-phone-alt"></i> 80805 33887</a>
+                    <a href="#"><i class="fas fa-envelope"></i>prasadsangle008@gmail.com</a>
+            </div>
+            </div>
+            <div class="box">
+                <h1>Quick Links</h1>
+                <div class="icons">
+               <a href="index.html">Home</a>
+               <a href="aboutus.html">About</a>
+               <a href="acheivement.html">Achievements</a>
+               <a href="gallery.html">Gallery</a>
+               <a href="contactus.html">Contact</a>
+            </div>
+            </div>
+        </div>
+        <div class="credit">
+            &copy;2023 <span>PSA</span> Sports, All right reserved.
+        </div>
+    </section>
+    <script src="script.js"></script>
+    </body>
+    </html>
