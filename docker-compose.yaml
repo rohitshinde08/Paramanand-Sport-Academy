@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: psa-postgres
+    environment:
+      POSTGRES_DB: psa_db
+      POSTGRES_USER: psa_admin
+      POSTGRES_PASSWORD: psa_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - psa-network
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: psa-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://psa_admin:psa_password@postgres:5432/psa_db
+      - JWT_SECRET=supersecretjwtkeyforpsasportsacademy2026
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      - postgres
+    networks:
+      - psa-network
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: psa-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - psa-network
+    restart: always
+
+  nginx:
+    image: nginx:alpine
+    container_name: psa-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - psa-network
+    restart: always
+
+volumes:
+  postgres_data:
+
+networks:
+  psa-network:
+    driver: bridge

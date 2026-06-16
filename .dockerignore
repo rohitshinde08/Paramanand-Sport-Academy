@@ -1,0 +1,30 @@
+# Version Control
+.git
+.gitignore
+.dockerignore
+README.md
+LICENSE
+
+# Node / Frontend Build Outputs
+node_modules
+**/node_modules
+frontend/dist
+frontend/build
+.eslintcache
+
+# Python / Backend Build Outputs
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.venv
+venv
+env
+
+# Local Database & Dynamic Upload Volumes
+postgres_data
+uploads
+backend/uploads
+frontend/public/uploads
