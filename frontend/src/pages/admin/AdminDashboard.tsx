@@ -33,7 +33,7 @@ const AdminDashboard: React.FC = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:8000/api/admin/stats?period=${period}`, {
+      const response = await axios.get(`/api/admin/stats?period=${period}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setStats(response.data);

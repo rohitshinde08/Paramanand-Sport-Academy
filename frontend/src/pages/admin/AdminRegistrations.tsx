@@ -27,7 +27,7 @@ const AdminRegistrations: React.FC = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8000/api/registrations/', {
+      const res = await axios.get('/api/registrations/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRegistrations(res.data);
@@ -41,7 +41,7 @@ const AdminRegistrations: React.FC = () => {
   const updateStatus = async (id: number, status: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:8000/api/registrations/${id}`, { status }, {
+      await axios.put(`/api/registrations/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRegistrations(registrations.map(r => r.id === id ? { ...r, status: status as any } : r));

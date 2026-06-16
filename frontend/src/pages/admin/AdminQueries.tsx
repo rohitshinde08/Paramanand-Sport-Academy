@@ -25,7 +25,7 @@ const AdminQueries: React.FC = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8000/api/queries/', {
+      const res = await axios.get('/api/queries/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQueries(res.data);
@@ -39,7 +39,7 @@ const AdminQueries: React.FC = () => {
   const updateStatus = async (id: number, status: string) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:8000/api/queries/${id}`, { status }, {
+      await axios.put(`/api/queries/${id}`, { status }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setQueries(queries.map(q => q.id === id ? { ...q, status: status as any } : q));

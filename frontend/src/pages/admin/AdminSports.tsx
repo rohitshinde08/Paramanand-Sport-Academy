@@ -35,7 +35,7 @@ const AdminSports: React.FC = () => {
   const fetchSports = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:8000/api/content/sports');
+      const res = await axios.get('/api/content/sports');
       setSports(res.data);
     } catch (error) {
       console.error("Error fetching sports", error);
@@ -48,7 +48,7 @@ const AdminSports: React.FC = () => {
     if (!window.confirm("WARNING: Deleting a sport might break references in Gallery or Registrations. Are you sure?")) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:8000/api/content/sports/${id}`, {
+      await axios.delete(`/api/content/sports/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSports(sports.filter(s => s.id !== id));
@@ -70,13 +70,13 @@ const AdminSports: React.FC = () => {
 
       if (editingId) {
         // Update
-        const res = await axios.put(`http://localhost:8000/api/content/sports/${editingId}`, payload, {
+        const res = await axios.put(`/api/content/sports/${editingId}`, payload, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSports(sports.map(s => s.id === editingId ? res.data : s));
       } else {
         // Create
-        const res = await axios.post('http://localhost:8000/api/content/sports', payload, {
+        const res = await axios.post('/api/content/sports', payload, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSports([...sports, res.data]);
