@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Trash2, Edit, Plus, CheckCircle, Search } from 'lucide-react';
+import { Trash2, Edit, Plus, Search } from 'lucide-react';
 
 interface Sport {
   id: number;

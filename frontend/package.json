@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@studio-freight/react-lenis": "^0.0.47",
     "@tailwindcss/postcss": "^4.3.1",
+    "@types/three": "^0.184.1",
     "axios": "^1.6.8",
     "framer-motion": "^12.40.0",
     "lucide-react": "^0.378.0",
@@ -18,7 +22,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "recharts": "^3.8.1",
-    "swiper": "^9.4.1"
+    "swiper": "^9.4.1",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

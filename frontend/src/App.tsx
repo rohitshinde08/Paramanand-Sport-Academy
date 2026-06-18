@@ -17,6 +17,7 @@ import AdminRegistrations from './pages/admin/AdminRegistrations';
 import AdminQueries from './pages/admin/AdminQueries';
 import AdminLayout from './components/admin/AdminLayout';
 import ScrollToTop from './components/ScrollToTop';
+import LenisScroll from './components/LenisScroll';
 
 // A wrapper component to conditionally hide Header and Footer on Admin pages
 const AppContent: React.FC = () => {
@@ -55,8 +56,10 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <ScrollToTop />
-      <AppContent />
+      <LenisScroll>
+        <ScrollToTop />
+        <AppContent />
+      </LenisScroll>
     </Router>
   );
 };

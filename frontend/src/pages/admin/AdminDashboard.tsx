@@ -158,7 +158,7 @@ const AdminDashboard: React.FC = () => {
                   contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
                 />
                 <Bar dataKey="value" fill="#1d4ed8" radius={[6, 6, 0, 0]} barSize={40}>
-                  {stats?.sportsData.map((entry, index) => (
+                  {stats?.sportsData.map((_entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Bar>
