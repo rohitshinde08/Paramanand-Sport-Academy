@@ -1,6 +1,5 @@
 # Paramanand Sports Academy 🏅
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB?logo=react&logoColor=black)
 ![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)
@@ -94,11 +93,6 @@ Once the containers are running, Nginx will route your traffic automatically:
 ├── docker-compose.yaml       # Multi-container orchestration
 └── nginx.conf                # Reverse proxy routing rules
 ```
-
-## 🗄️ Database Seeding
-
-The application comes with an intelligent auto-seeding script (`backend/app/core/seed.py`). 
-Every time the backend container starts, it checks the database. If it is empty, it automatically populates the database with default sports, coaches, and gallery images from the `/seed-data` directory. It has built-in duplicate protection, so it is 100% safe to restart the containers without corrupting the database.
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
