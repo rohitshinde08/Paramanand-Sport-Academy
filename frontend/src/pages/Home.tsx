@@ -5,7 +5,7 @@ import { motion, Variants, useInView, useScroll, useTransform } from 'framer-mot
 import { ChevronRight, Award, Users, Star, Activity, Quote } from 'lucide-react';
 import Hero3D from '../components/Hero3D';
 
-interface SportItem { id: number; name: string; slug: string; image_url: string; }
+interface SportItem { id: number; name: string; slug: string; description: string; image_url: string; }
 interface CoachItem { id: number; name: string; specialty: string; bio: string; image_url: string; }
 interface TestimonialItem { id: number; parent_name: string; relationship: string; feedback: string; image_url: string; }
 
@@ -54,8 +54,23 @@ export default function Home() {
 
   // Horizontal Scroll Setup
   const horizontalScrollRef = useRef<HTMLElement>(null);
+  const scrollContentRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState(0);
   const { scrollYProgress } = useScroll({ target: horizontalScrollRef });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
+  
+  useEffect(() => {
+    const updateScrollRange = () => {
+      if (scrollContentRef.current) {
+        // Calculate the exact distance needed to scroll to the end of the content
+        setScrollRange(scrollContentRef.current.scrollWidth - window.innerWidth);
+      }
+    };
+    
+    updateScrollRange();
+    window.addEventListener('resize', updateScrollRange);
+    return () => window.removeEventListener('resize', updateScrollRange);
+  }, [sports]);
   
   useEffect(() => {
     Promise.all([
@@ -74,17 +89,21 @@ export default function Home() {
       <Hero3D />
 
       {/* Featured Sports - Cinematic Horizontal Scroll */}
-      <section ref={horizontalScrollRef} className="relative h-[200vh] bg-slate-900">
+      <section ref={horizontalScrollRef} className="relative h-[200vh] bg-bg-light">
         <div className="sticky top-0 flex flex-col h-screen justify-center overflow-hidden py-12 md:py-24">
           
           <div className="px-6 md:px-12 lg:px-24 mb-8 md:mb-16 flex-shrink-0">
-            <h2 className="text-5xl md:text-7xl font-extrabold font-heading text-white mb-2 md:mb-4 tracking-tighter">ELITE <span className="text-accent">PROGRAMS</span></h2>
-            <p className="text-slate-300 max-w-xl text-lg md:text-xl font-light">
+            <h2 className="text-5xl md:text-7xl font-extrabold font-heading text-primary mb-2 md:mb-4 tracking-tighter">ELITE <span className="text-accent">PROGRAMS</span></h2>
+            <p className="text-slate-500 max-w-xl text-lg md:text-xl font-light">
               Comprehensive, champion-tier training methodologies customized for your discipline.
             </p>
           </div>
 
-          <motion.div style={{ x }} className="flex gap-6 md:gap-8 px-6 md:px-12 lg:px-24 items-center flex-grow-0">
+          <motion.div 
+            ref={scrollContentRef} 
+            style={{ x }} 
+            className="flex w-max gap-6 md:gap-8 px-6 md:px-12 lg:px-24 items-center flex-grow-0"
+          >
             {sports.map((sport) => (
               <div 
                 key={sport.id} 
@@ -97,8 +116,14 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent"></div>
                 
-                <div className="absolute bottom-0 left-0 w-full p-8 md:p-10">
-                  <h3 className="text-4xl md:text-5xl font-extrabold font-heading text-white mb-6 tracking-wide drop-shadow-md">{sport.name}</h3>
+                <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 transition-transform duration-500 group-hover:-translate-y-4">
+                  <h3 className="text-4xl md:text-5xl font-extrabold font-heading text-white mb-3 tracking-wide drop-shadow-md">{sport.name}</h3>
+                  
+                  {/* Added the description back with line-clamp so it doesn't break the card size */}
+                  <p className="text-slate-200 text-sm md:text-base font-light line-clamp-2 md:line-clamp-3 mb-6 drop-shadow-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                    {sport.description}
+                  </p>
+
                   <Link to={`/sports/${sport.slug}`} className="inline-flex items-center gap-3 bg-accent text-primary px-8 py-4 rounded-full font-bold text-base hover:scale-105 hover:bg-white transition-all shadow-xl">
                     View Details <ChevronRight className="w-5 h-5" />
                   </Link>
@@ -106,7 +131,7 @@ export default function Home() {
               </div>
             ))}
             {/* Spacer at the end to ensure smooth stop */}
-            <div className="w-[5vw] sm:w-[15vw] flex-shrink-0" />
+            <div className="w-[5vw] md:w-[10vw] flex-shrink-0" />
           </motion.div>
         </div>
       </section>
@@ -154,15 +179,29 @@ export default function Home() {
           initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer}
         >
           {coaches.map(coach => (
-            <motion.div key={coach.id} variants={fadeUpVariant} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="relative inline-block mb-6">
-                <img src={resolveImage(coach.image_url)} alt={coach.name} className="w-24 h-24 rounded-full object-cover border-2 border-white shadow-sm" />
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-accent text-primary text-[0.65rem] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap border border-white">
-                  {coach.specialty}
+            <motion.div 
+              key={coach.id} 
+              variants={fadeUpVariant} 
+              className="relative h-[400px] rounded-3xl overflow-hidden group shadow-lg"
+            >
+              <img 
+                src={resolveImage(coach.image_url)} 
+                alt={coach.name} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500"></div>
+              
+              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+                <div className="transform transition-transform duration-500 translate-y-12 group-hover:translate-y-0">
+                  <div className="inline-block bg-accent text-primary text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-md">
+                    {coach.specialty}
+                  </div>
+                  <h3 className="text-2xl font-bold font-heading text-white mb-3">{coach.name}</h3>
+                  <p className="text-sm text-slate-200 line-clamp-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 font-light">
+                    {coach.bio}
+                  </p>
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-primary mb-2">{coach.name}</h3>
-              <p className="text-sm text-slate-500 line-clamp-3">{coach.bio}</p>
             </motion.div>
           ))}
         </motion.div>
