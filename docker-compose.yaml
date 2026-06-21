@@ -4,10 +4,8 @@ services:
   postgres:
     image: postgres:15-alpine
     container_name: psa-postgres
-    environment:
-      POSTGRES_DB: psa_db
-      POSTGRES_USER: psa_admin
-      POSTGRES_PASSWORD: psa_password
+    env_file:
+      - ./backend/.env
     ports:
       - "5432:5432"
     volumes:
@@ -28,11 +26,8 @@ services:
     container_name: psa-backend
     ports:
       - "8000:8000"
-    environment:
-      - DATABASE_URL=postgresql+asyncpg://psa_admin:psa_password@postgres:5432/psa_db
-      - JWT_SECRET=supersecretjwtkeyforpsasportsacademy2026
-      - ALGORITHM=HS256
-      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
+    env_file:
+      - ./backend/.env
     volumes:
       - ./uploads:/app/uploads
       - ./seed-data:/app/seed-data:ro
