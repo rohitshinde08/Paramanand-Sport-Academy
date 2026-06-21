@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
 from app.database.connection import AsyncSessionLocal, engine, Base
-from app.models.postgres_models import Admin, Sport, Coach, Achievement, Testimonial, GalleryItem
+from app.models import Admin, Sport, Coach, Achievement, Testimonial, GalleryItem
 from app.core.security import get_password_hash
 
 SEED_DATA_DIR = "./seed-data"

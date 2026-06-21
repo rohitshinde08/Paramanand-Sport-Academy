@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.database.connection import get_db
-from app.models.postgres_models import Query
+from app.models import Query
 from app.schemas.schemas import QueryCreate, QueryUpdateStatus, QueryOut
 from app.core.dependencies import get_current_admin
 

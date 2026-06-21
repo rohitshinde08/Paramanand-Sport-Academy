@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.database.connection import get_db
-from app.models.postgres_models import Admin
+from app.models import Admin
 from app.schemas.schemas import AdminLogin, Token, AdminOut
 from app.core.security import verify_password, get_password_hash, create_access_token
 from app.core.dependencies import get_current_admin

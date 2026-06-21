@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import func
 from app.database.connection import get_db
-from app.models.postgres_models import Registration, Query, Sport, Coach
+from app.models import Registration, Query, Sport, Coach
 from app.core.dependencies import get_current_admin
 from datetime import datetime, timedelta
 from collections import OrderedDict

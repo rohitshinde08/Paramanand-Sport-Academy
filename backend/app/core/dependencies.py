@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.database.connection import get_db
-from app.models.postgres_models import Admin
+from app.models import Admin
 from app.core.security import decode_access_token
 
 # Define OAuth2 bearer scheme pointing to login route

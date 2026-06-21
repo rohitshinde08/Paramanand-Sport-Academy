@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.database.connection import get_db
-from app.models.postgres_models import Sport, Coach, Achievement, Testimonial, GalleryItem
+from app.models import Sport, Coach, Achievement, Testimonial, GalleryItem
 from app.schemas.schemas import (
     SportCreate, SportOut,
     CoachCreate, CoachOut,

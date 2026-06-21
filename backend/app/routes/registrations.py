@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.database.connection import get_db
-from app.models.postgres_models import Registration
+from app.models import Registration
 from app.schemas.schemas import RegistrationCreate, RegistrationUpdateStatus, RegistrationOut
 from app.core.dependencies import get_current_admin
 
